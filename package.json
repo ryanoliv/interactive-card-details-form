@@ -1,0 +1,34 @@
+{
+  "name": "interactive-card-details-form-main",
+  "version": "1.0.0",
+  "description": "interactive card details form",
+  "main": "index.js",
+  "scripts": {
+    "watch:sass": "sass sass/main.scss css/main.min.css -w",
+    "devserver": "live-server",
+    "start": "npm-run-all --parallel devserver watch:sass",
+    "compile:sass": "sass sass/main.scss css/main.comp.css",
+    "prefix:css": "postcss --use autoprefixer -b 'last 5 versions' css/main.comp.css -o css/main.prefix.css",
+    "compress:css": "sass css/main.prefix.css css/main.min.css --style compressed",
+    "build:css": "npm-run-all compile:sass prefix:css compress:css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryanoliv/interactive-card-details-form.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ryanoliv/interactive-card-details-form/issues"
+  },
+  "homepage": "https://github.com/ryanoliv/interactive-card-details-form#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^10.1.0",
+    "sass": "^1.60.0"
+  },
+  "dependencies": {
+    "live-server": "^1.2.2"
+  }
+}

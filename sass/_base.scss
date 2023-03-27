@@ -1,0 +1,202 @@
+/* -------------------- */
+/*        RESET         */
+/* -------------------- */
+
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-weight: 400;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* -------------------- */
+/*     VARIABLES        */
+/* -------------------- */
+:root {
+  --clr-primary-red-erros: hsl(0, 100%, 66%);
+  --clr-primary-gradient-active-purple: hsl(278, 94%, 30%);
+  --clr-primary-gradient-active-blue: hsl(249, 99%, 64%);
+
+  --clr-neutral-white: hsl(0, 0%, 100%);
+  --clr-neutral-light-gray-violet: hsl(270, 3%, 87%);
+  --clr-neutral-dark-gray-violet: hsl(279, 6%, 55%);
+  --clr-neutral-very-dark-violet: hsl(278, 68%, 11%);
+}
+
+body {
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.section__container {
+  min-height: 100vh;
+  display: flex;
+
+  &--left {
+    position: relative;
+
+    img {
+      height: 100%;
+    }
+
+    &__credit-card {
+      position: absolute;
+      top: 185px;
+      left: 160px;
+
+      display: flex;
+      flex-direction: column;
+      gap: 2.25rem;
+
+      &--front {
+        position: relative;
+
+        &--card-info {
+          position: absolute;
+          top: 0;
+          padding: 1.6rem 1.875rem;
+          color: var(--clr-neutral-white);
+          width: 86.5%;
+
+          &--logo {
+            margin-bottom: 4rem;
+          }
+
+          &--card-number {
+            font-size: 1.7rem;
+            letter-spacing: 4px;
+            margin-bottom: 2rem;
+          }
+
+          &--bottom-info {
+            display: flex;
+            justify-content: space-between;
+
+            &--name,
+            &--expiry {
+              font-size: 0.85rem;
+              letter-spacing: 2px;
+            }
+
+            &--name {
+              text-transform: uppercase;
+            }
+          }
+        }
+      }
+
+      &--back {
+        position: relative;
+        right: -94px;
+
+        &--cvc {
+          position: absolute;
+          top: 111px;
+          right: 56px;
+          font-size: 0.9rem;
+          letter-spacing: 2px;
+          color: var(--clr-neutral-white);
+        }
+      }
+    }
+  }
+
+  &--right {
+    display: grid;
+    place-items: center;
+    width: calc(100% - 483px);
+
+    &__form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+      max-width: 380px;
+
+      &--input-container {
+        display: flex;
+        flex-direction: column;
+
+        &.date {
+          flex-direction: row;
+          gap: 1.25rem;
+        }
+
+        &__label {
+          text-transform: uppercase;
+          margin-bottom: 0.75rem;
+          font-size: 0.7rem;
+          letter-spacing: 2px;
+        }
+
+        &__expiry--inputs {
+          margin-top: 0.75rem;
+        }
+
+        &__input,
+        select {
+          padding: 0.6rem 0.8rem;
+          border: 2px solid var(--clr-neutral-light-gray-violet);
+          border-radius: 8px;
+
+          &::placeholder {
+            color: var(--clr-neutral-dark-gray-violet);
+            // letter-spacing: 2px;
+          }
+        }
+
+        &__cvc {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+    }
+  }
+}
+
+select {
+  appearance: none;
+  background-color: transparent;
+}

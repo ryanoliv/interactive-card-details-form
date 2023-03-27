@@ -1,0 +1,179 @@
+/* -------------------- */
+/*        RESET         */
+/* -------------------- */
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-weight: 400;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* -------------------- */
+/*     VARIABLES        */
+/* -------------------- */
+:root {
+  --clr-primary-red-erros: hsl(0, 100%, 66%);
+  --clr-primary-gradient-active-purple: hsl(278, 94%, 30%);
+  --clr-primary-gradient-active-blue: hsl(249, 99%, 64%);
+  --clr-neutral-white: hsl(0, 0%, 100%);
+  --clr-neutral-light-gray-violet: hsl(270, 3%, 87%);
+  --clr-neutral-dark-gray-violet: hsl(279, 6%, 55%);
+  --clr-neutral-very-dark-violet: hsl(278, 68%, 11%);
+}
+
+body {
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.section__container {
+  min-height: 100vh;
+  display: flex;
+}
+.section__container--left {
+  position: relative;
+}
+.section__container--left img {
+  height: 100%;
+}
+.section__container--left__credit-card {
+  position: absolute;
+  top: 185px;
+  left: 160px;
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem;
+}
+.section__container--left__credit-card--front {
+  position: relative;
+}
+.section__container--left__credit-card--front--card-info {
+  position: absolute;
+  top: 0;
+  padding: 1.6rem 1.875rem;
+  color: var(--clr-neutral-white);
+  width: 86.5%;
+}
+.section__container--left__credit-card--front--card-info--logo {
+  margin-bottom: 4rem;
+}
+.section__container--left__credit-card--front--card-info--card-number {
+  font-size: 1.7rem;
+  letter-spacing: 4px;
+  margin-bottom: 2rem;
+}
+.section__container--left__credit-card--front--card-info--bottom-info {
+  display: flex;
+  justify-content: space-between;
+}
+.section__container--left__credit-card--front--card-info--bottom-info--name, .section__container--left__credit-card--front--card-info--bottom-info--expiry {
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+}
+.section__container--left__credit-card--front--card-info--bottom-info--name {
+  text-transform: uppercase;
+}
+.section__container--left__credit-card--back {
+  position: relative;
+  right: -94px;
+}
+.section__container--left__credit-card--back--cvc {
+  position: absolute;
+  top: 111px;
+  right: 56px;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  color: var(--clr-neutral-white);
+}
+.section__container--right {
+  display: grid;
+  place-items: center;
+  width: calc(100% - 483px);
+}
+.section__container--right__form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  max-width: 380px;
+}
+.section__container--right__form--input-container {
+  display: flex;
+  flex-direction: column;
+}
+.section__container--right__form--input-container.date {
+  flex-direction: row;
+  gap: 1.25rem;
+}
+.section__container--right__form--input-container__label {
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+}
+.section__container--right__form--input-container__expiry--inputs {
+  margin-top: 0.75rem;
+}
+.section__container--right__form--input-container__input,
+.section__container--right__form--input-container select {
+  padding: 0.6rem 0.8rem;
+  border: 2px solid var(--clr-neutral-light-gray-violet);
+  border-radius: 8px;
+}
+.section__container--right__form--input-container__input::placeholder,
+.section__container--right__form--input-container select::placeholder {
+  color: var(--clr-neutral-dark-gray-violet);
+}
+.section__container--right__form--input-container__cvc {
+  display: flex;
+  flex-direction: column;
+}
+
+select {
+  appearance: none;
+  background-color: transparent;
+}
+
+/*# sourceMappingURL=main.min.css.map */

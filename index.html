@@ -18,6 +18,8 @@
       rel="stylesheet"
     />
 
+    <link rel="stylesheet" href="css/main.min.css" />
+
     <title>Interactive card details form</title>
   </head>
   <body>
@@ -26,26 +28,61 @@
         <div class="section__container--left">
           <img
             srcset="
-              /assets/images/bg-main-desktop.png 483w,
-              /assets/images/bg-main-mobile.png  375w
+              /images/bg-main-desktop.png 483w,
+              /images/bg-main-mobile.png  375w
             "
-            sizes="(max-width: 500px) 100vw,
-         100vw"
-            src="/assets/images/bg-main-mobile.png"
+            sizes="(max-width: 500px) 375px,
+            483px"
+            src="/images/bg-main-mobile.png"
             alt="gradient background"
           />
         </div>
         <div class="section__container--left__credit-card">
-          <img
-            src="/images/bg-card-front.png"
-            alt="credit card front"
-            class="section__container--left__credit-card--front"
-          />
-          <img
-            src="/images/bg-card-back.png"
-            alt="credit card back"
-            class="section__container--left__credit-card--back"
-          />
+          <div class="section__container--left__credit-card--front">
+            <img
+              src="/images/bg-card-front.png"
+              alt="credit card front"
+              class="section__container--left__credit-card--front-img"
+            />
+            <div
+              class="section__container--left__credit-card--front--card-info"
+            >
+              <div
+                class="section__container--left__credit-card--front--card-info--logo"
+              >
+                <img src="/images/card-logo.svg" alt="card logo" />
+              </div>
+              <div
+                class="section__container--left__credit-card--front--card-info--card-number"
+              >
+                0000 0000 0000 0000
+              </div>
+              <div
+                class="section__container--left__credit-card--front--card-info--bottom-info"
+              >
+                <h1
+                  class="section__container--left__credit-card--front--card-info--bottom-info--name"
+                >
+                  Jane Appleseed
+                </h1>
+                <h2
+                  class="section__container--left__credit-card--front--card-info--bottom-info--expiry"
+                >
+                  00/00
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div class="section__container--left__credit-card--back">
+            <img
+              src="/images/bg-card-back.png"
+              alt="credit card back"
+              class="section__container--left__credit-card--back-img"
+            />
+            <h2 class="section__container--left__credit-card--back--cvc">
+              000
+            </h2>
+          </div>
         </div>
         <div class="section__container--right">
           <form action="" class="section__container--right__form">
@@ -57,21 +94,29 @@
               >
               <input
                 type="text"
+                placeholder="e.g. Jane Appleseed"
+                id="name"
+                required
                 class="section__container--right__form--input-container__input"
               />
             </div>
             <div class="section__container--right__form--input-container">
               <label
-                for="name"
+                for="cc"
                 class="section__container--right__form--input-container__label"
                 >Card Number</label
               >
               <input
                 type="text"
+                placeholder="e.g. 1234 5678 9123 0000"
+                maxlength="19"
+                pattern="[0-9]{16}"
+                required
                 class="section__container--right__form--input-container__input"
+                id="cc"
               />
             </div>
-            <div class="section__container--right__form--input-container">
+            <div class="section__container--right__form--input-container date">
               <div
                 class="section__container--right__form--input-container__expiry"
               >
@@ -83,14 +128,45 @@
                 <div
                   class="section__container--right__form--input-container__expiry--inputs"
                 >
-                  <input
+                  <!-- <input
                     type="text"
+                    placeholder="MM"
                     class="section__container--right__form--input-container__input"
-                  />
-                  <input
+                  /> -->
+                  <select id="expiration-month" required>
+                    <option value="" disabled selected>MM</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                  </select>
+                  <!-- <input
                     type="text"
+                    placeholder="YY"
                     class="section__container--right__form--input-container__input"
-                  />
+                  /> -->
+                  <select id="expiration-year">
+                    <option value="" disabled selected hidden>YY</option>
+                    <option>2023</option>
+                    <option>2024</option>
+                    <option>2025</option>
+                    <option>2026</option>
+                    <option>2027</option>
+                    <option>2028</option>
+                    <option>2029</option>
+                    <option>2030</option>
+                    <option>2031</option>
+                    <option>2032</option>
+                    <option>2033</option>
+                  </select>
                 </div>
               </div>
               <div
@@ -103,28 +179,44 @@
                 >
                 <input
                   type="text"
+                  placeholder="e.g. 123"
+                  maxlength="3"
+                  id="cvc"
+                  required
                   class="section__container--right__form--input-container__input"
                 />
               </div>
             </div>
+            <button class="section__container--right__form--submit-btn">
+              Confirm
+            </button>
           </form>
-          <button class="section__container--right__form--submit-btn">
-            Confirm
-          </button>
         </div>
       </section>
     </main>
-    0000 0000 0000 0000 Jane Appleseed 00/00 000 Cardholder Name e.g. Jane
+    <!-- 0000 0000 0000 0000 Jane Appleseed 00/00 000 Cardholder Name e.g. Jane
     Appleseed Card Number e.g. 1234 5678 9123 0000 Exp. Date (MM/YY) MM YY CVC
-    e.g. 123 Confirm
+    e.g. 123 Confirm -->
 
     <!-- Completed state start -->
 
-    Thank you! We've added your card details Continue
+    <!-- Thank you! We've added your card details Continue -->
 
     <!-- <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div> -->
+    <script>
+      const input = document.getElementById("cc");
+
+      input.addEventListener("input", () => {
+        const formatNumber = (number) =>
+          number.split("").reduce((seed, next, index) => {
+            if (index !== 0 && !(index % 4)) seed += " ";
+            return seed + next;
+          }, "");
+        input.value = formatNumber(input.value.replaceAll(" ", ""));
+      });
+    </script>
   </body>
 </html>
